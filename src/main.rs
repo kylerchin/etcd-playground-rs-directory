@@ -8,7 +8,7 @@ async fn main() -> Result<(), Box<dyn Error + Sync + Send>> {
     .put(
         "/playground",
         "",
-        Some(etcd_client::PutOptions::new().with_ignore_value()),
+        None,
     )
     .await?;
 
