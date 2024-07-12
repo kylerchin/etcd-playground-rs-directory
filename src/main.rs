@@ -33,7 +33,7 @@ async fn main() -> Result<(), Box<dyn Error + Sync + Send>> {
     println!("{:#?}", resulting_values);
 
     for a in resulting_values.iter() {
-        println!("{}, {}", a.key_str(), a.value_str());
+        println!("{}, {}", a.key_str(), a.value_str().unwrap());
     }
 
     Ok(())
