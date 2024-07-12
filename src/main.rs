@@ -28,7 +28,7 @@ async fn main() -> Result<(), Box<dyn Error + Sync + Send>> {
     )
     .await?;
 
-    let resulting_values = etcd.get("/playground", None).await.unwrap().take_kvs();
+    let resulting_values = etcd.get("/playground", Some(etcd_client::GetOptions::new().with_prefix())).await.unwrap().take_kvs();
 
     println!("{:#?}", resulting_values);
 
